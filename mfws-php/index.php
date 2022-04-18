@@ -2,24 +2,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>WEB<h1>
+    <h1><a href="index.php">WEB</a><h1>
         <ol>
-            <li><a href="index.php?id=HTML">HTML</a></li>
-            <li><a href="index.php?id=CSS">CSS</a></li>
-            <li><a href="index.php?id=Javascript">Javascript</a></li>
+          <?php
+          $list = scandir('data');
+          $i = 0;
+          while($i<count($list)){
+            if($list[$i] != '.'){
+              if($list[$i] != '..'){
+              ?>
+              <li><a href="index.php?id=<?=$list[$i]?>"><?=$list[$i]?></a></li>
+              <?php
+            }
+          }
+          $i = $i +1;
+        }
+        ?>
         </ol>
         <h2>
-            <?php
-                echo $_GET['id'];
-            ?>
+          <?php
+          if(isset($_GET['id'])){
+            echo $_GET['id'];}
+          else {echo "Welcome";}
+          ?>
         </h2>
         <?php
-        echo file_get_contents("data/".$_GET['id']); // echo data/id 값에 해당하는 파일의 내용
+        if(isset($_GET['id'])){
+          echo file_get_contents("data/".$_GET['id']); // echo data/id 값에 해당하는 파일의 내용
+        }
+        else {echo "Hello, PHP";}
         ?>
 </body>
 </html>
