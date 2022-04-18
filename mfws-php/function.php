@@ -10,7 +10,7 @@
     <h1>function</h1>
     <?php
     $str = "Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-    
+
     Similique ullam fugiat facilis praesentium, quisquam excepturi quae commodi corporis natus nam saepe quidem nemo aliquam animi repellat! Enim voluptatem repellendus cum.";
     echo $str;
     ?>
