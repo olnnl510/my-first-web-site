@@ -1,1 +1,0 @@
-CSS ipsum dolor sit amet consectetur adipisicing elit. Labore atque asperiores vero explicabo eaque est assumenda, totam corporis consequatur iure ea tenetur nam maiores voluptas vitae accusamus animi itaque aperiam.
