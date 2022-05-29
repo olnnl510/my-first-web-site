@@ -8,7 +8,8 @@
     <h1><a href="index.php">WEB</a><h1>
         <ol>
           <?php
-          $list = scandir('data');
+          $list = scandir('data'); // scandir('./data'); 의 결과를 list라는 변수에 담음
+          // var_dump($list); // 어떤 값을 리턴하는지 확인. print_r과 비슷
           $i = 0;
           while($i<count($list)){
             if($list[$i] != '.'){
@@ -16,11 +17,14 @@
               ?>
               <li><a href="index.php?id=<?=$list[$i]?>"><?=$list[$i]?></a></li>
               <?php
+              }
             }
+            $i = $i +1;
           }
-          $i = $i +1;
-        }
         ?>
+        <!-- <li><a href="index.php?id=HTML">HTML</a></li>
+        <li><a href="index.php?id=CSS">CSS</a></li>
+        <li><a href="index.php?id=JavaScript">JavaScript</a></li> -->
         </ol>
         <h2>
           <?php
