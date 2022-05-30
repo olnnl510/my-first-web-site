@@ -10,22 +10,17 @@
           <?php
             $list = scandir('data'); // scandir('./data'); 의 결과를 list라는 변수에 담음
             // var_dump($list); // 어떤 값을 리턴하는지 항상 확인. print_r과 비슷
-
             $i = 0;
-            while($i < count($list)) {
-              if($list[$i] != '.') {
-                if($list[$i] != '..') {
-                  echo "<li><a href=\"index.php?id=$list[$i]\">$list[$i]</a></li>";
-                }
+            while($i<count($list)){
+              if($list[$i] != '.'){
+                if($list[$i] != '..'){
+          ?>
+          <li><a href="index.php?id=<?=$list[$i]?>"><?=$list[$i]?></a></li>
+          <?php
+            }
               }
               $i = $i +1;
             }
-            // echo "<li>$list[0]</li>";
-            // echo "<li>$list[1]</li>";
-            // echo "<li>$list[2]</li>";
-            // echo "<li>$list[3]</li>";
-            // echo "<li>$list[4]</li>";
-            // echo "<li>$list[5]</li>";
           ?>
         <!-- <li><a href="index.php?id=HTML">HTML</a></li>
         <li><a href="index.php?id=CSS">CSS</a></li>
