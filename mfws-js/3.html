@@ -2,43 +2,14 @@
 <html>
 
 <head>
-  <title>WEB1 - JavaScrpit</title>
+  <title>WEB1 - CSS</title>
   <meta charset="utf-8">
-  <script>
-    function nightDayHandler(self) {
-      var target = document.querySelector('body');
-      if (self.value === 'night') { // self : 전역객체.. 웹브라우저 : 윈도우
-        target.style.backgroundColor = 'black';
-        target.style.color = 'white';
-        self.value = 'day'
-
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while (i < alist.length) {
-          // console.log(alist[i]);
-          alist[i].style.color = 'powderblue';
-          i = i + 1;
-        }
-      } else {
-        target.style.backgroundColor = 'white';
-        target.style.color = 'black';
-        self.value = 'night'
-
-        var i = 0;
-        while (i < alist.length) {
-          // console.log(alist[i]);
-          alist[i].style.color = 'blue';
-          i = i + 1;
-        }
-      }
-    }
-  </script>
+  <script src="colors.js"></script>
 </head>
 
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <input id="night_day" type="button" value="night" onclick="nightDayHandler(this)";>
-  <input id="night_day" type="button" value="night" onclick="nightDayHandler(this)";>
+  <input type="button" value="night" onclick="nightDayHandler(this)">
   <div id="grid">
     <ol>
       <li><a href="1.html">HTML</a></li>

@@ -8,12 +8,39 @@
 </head>
 <body>
     <h1>Object</h1>
-    <h2>create</h22>
+    <h2>create</h2>
         <script>
             var coworkers = {
                 "programmer" : "egoing",
                 "designer" : "leezche"
             };
+            document.write("programmer : "+coworkers.programmer+"<br>");
+            document.write("designer : "+coworkers.designer+"<br>");
+            coworkers.bookkeeper = "duru";
+            document.write("bookkeeper : "+coworkers.bookkeeper+"<br>");
+            coworkers["data scientist"] = "taeho"; // 이름에 공백을 넣을 수 없음. 배열에서 정보가져올 때 쓰는 [] 를 씀
+            document.write("data scientist : "+coworkers["data scientist"]+"<br>");
+        </script>
+    <h2>Iterate</h2>
+        <script>
+            for(var key in coworkers) {
+            // document.write(key+"<br>"); // 키값이 반복
+            // document.write(coworkers[key]+"<br>"); // 값이 반복 (=배열[인덱스])
+            document.write(key+' : '+coworkers[key]+"<br>");
+        }
+        </script>
+        <h2>Property & Method</h2>
+        <script>
+            coworkers.showAll = function() {
+                for(var key in this) {
+                document.write(key+' : '+this[key]+"<br>");
+                }
+            }
+            // showAll 을 하면 coworkers에 있는 모든 데이터들을 iterate(반복)해서 화면에 출력하는 코드를 넣음
+
+            coworkers.showAll();
+            // function showAll() {
+            // }
         </script>
 </body>
 </html>
